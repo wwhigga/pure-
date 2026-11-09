@@ -1,0 +1,460 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 5%;
+  background: rgba(250, 250, 250, 0.8);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #0a0a0a;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.logo:hover {
+  opacity: 0.6;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+
+  
+}
+
+.navLinks a {
+  color: #0a0a0a;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: opacity 0.3s;
+}
+
+.navLinks a:hover {
+  opacity: 0.6;
+}
+
+.profileWrapper {
+  position: relative;
+}
+
+.profileButton {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: opacity 0.3s;
+}
+
+.profileButton:hover {
+  opacity: 0.6;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  background: white;
+  border: 2px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+
+.profileButton:hover .avatar {
+  border-color: #999;
+}
+
+.avatarImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatarInitials {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #0a0a0a;
+  letter-spacing: 0.02em;
+}
+
+.userName {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #0a0a0a;
+  letter-spacing: 0.02em;
+}
+
+.loginButton {
+  display: inline-block;
+  background: #0a0a0a;
+  color: #fafafa;
+  padding: 0.5rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.loginButton:hover {
+  opacity: 0.6;
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 1rem);
+  right: 0;
+  min-width: 280px;
+  background: white;
+  border: 2px solid #e0e0e0;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.dropdownHeader {
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem;
+  align-items: center;
+}
+
+.dropdownAvatar {
+  width: 48px;
+  height: 48px;
+  background: #fafafa;
+  border: 2px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.dropdownAvatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dropdownAvatar span {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0a0a0a;
+}
+
+.dropdownInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.dropdownName {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #0a0a0a;
+  margin-bottom: 0.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dropdownEmail {
+  font-size: 0.85rem;
+  color: #666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dropdownDivider {
+  height: 1px;
+  background: #e0e0e0;
+  margin: 0.5rem 0;
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.9rem 1.5rem;
+  color: #0a0a0a;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dropdownItem:hover {
+  background: #fafafa;
+}
+
+/* Mobile Menu Button */
+.mobileMenuButton {
+  display: none;
+  background: none;
+  border: none;
+  color: #0a0a0a;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: opacity 0.3s;
+  z-index: 1001;
+}
+
+.mobileMenuButton:hover {
+  opacity: 0.6;
+}
+
+/* Mobile Menu Overlay */
+.mobileOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  backdrop-filter: blur(4px);
+}
+
+/* Mobile Menu */
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 85%;
+  max-width: 400px;
+  background: white;
+  border-left: 2px solid #e0e0e0;
+  z-index: 1000;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileMenuHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  border-bottom: 2px solid #e0e0e0;
+  background: #fafafa;
+  flex-shrink: 0;
+}
+
+.mobileMenuTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #0a0a0a;
+  text-decoration: none;
+}
+
+.mobileCloseButton {
+  background: none;
+  border: none;
+  color: #0a0a0a;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: opacity 0.3s;
+}
+
+.mobileCloseButton:hover {
+  opacity: 0.6;
+}
+
+.mobileMenuContent {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 2rem;
+  gap: 1.5rem;
+}
+
+.mobileUserInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: #fafafa;
+  border: 2px solid #e0e0e0;
+}
+
+.mobileAvatar {
+  width: 56px;
+  height: 56px;
+  background: white;
+  border: 2px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.mobileAvatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mobileAvatar span {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #0a0a0a;
+}
+
+.mobileUserDetails {
+  flex: 1;
+  min-width: 0;
+}
+
+.mobileUserName {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #0a0a0a;
+  margin-bottom: 0.3rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mobileUserEmail {
+  font-size: 0.9rem;
+  color: #666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mobileLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.mobileLinks a {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 1.2rem;
+  color: #0a0a0a;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  border: 2px solid #e0e0e0;
+  background: #fafafa;
+  transition: all 0.3s;
+}
+
+.mobileLinks a:hover {
+  background: white;
+  border-color: #0a0a0a;
+}
+
+.mobileDivider {
+  height: 1px;
+  background: #e0e0e0;
+  margin: 1rem 0;
+}
+
+.mobileLogoutButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  width: 100%;
+  padding: 1.2rem;
+  background: white;
+  border: 2px solid #e0e0e0;
+  color: #0a0a0a;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.mobileLogoutButton:hover {
+  background: #fafafa;
+  border-color: #0a0a0a;
+}
+
+.mobileLoginButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1.2rem;
+  background: #0a0a0a;
+  color: #fafafa;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.mobileLoginButton:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 968px) {
+  .mobileMenuButton {
+    display: block;
+  }
+
+  .navLinks {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav {
+    padding: 1.5rem 5%;
+  }
+
+  .mobileMenu {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .mobileMenuHeader {
+    padding: 1.5rem;
+  }
+
+  .mobileMenuContent {
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 968px) {
+  .userName {
+    display: none;
+  }
+}

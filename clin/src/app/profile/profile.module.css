@@ -1,0 +1,284 @@
+.page {
+  min-height: 100vh;
+  background: #fafafa;
+  color: #0a0a0a;
+}
+
+.main {
+  padding-top: 5rem;
+  min-height: calc(100vh - 5rem);
+  display: flex;
+  align-items: center;
+}
+
+.formSection {
+  width: 100%;
+  padding: 4rem 5%;
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.formContainer {
+  flex: 1;
+  max-width: 500px;
+  background: white;
+  border: 2px solid #e0e0e0;
+  padding: 3rem;
+}
+
+.formHeader {
+  margin-bottom: 2.5rem;
+}
+
+.formTitle {
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.02em;
+}
+
+.formSubtitle {
+  font-size: 0.95rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: #0a0a0a;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 1rem;
+  color: #666;
+  pointer-events: none;
+}
+
+.input {
+  width: 100%;
+  padding: 1rem 1rem 1rem 3rem;
+  border: 2px solid #e0e0e0;
+  background: #fafafa;
+  font-size: 0.95rem;
+  color: #0a0a0a;
+  transition: border-color 0.3s;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #0a0a0a;
+  background: white;
+}
+
+.input::placeholder {
+  color: #999;
+}
+
+.forgotPassword {
+  text-align: right;
+}
+
+.submitButton {
+  width: 100%;
+  background: #0a0a0a;
+  color: #fafafa;
+  border: none;
+  padding: 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  margin-top: 1rem;
+  transition: background 0.3s;
+}
+
+.submitButton:hover {
+  background: #1a1a1a;
+}
+
+.formFooter {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.footerText {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+}
+
+.link {
+  color: #0a0a0a;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid #0a0a0a;
+  transition: opacity 0.3s;
+}
+
+.link:hover {
+  opacity: 0.6;
+}
+
+.linkButton {
+  color: #0a0a0a;
+  font-weight: 500;
+  text-decoration: none;
+  border: none;
+  background: none;
+  border-bottom: 1px solid #0a0a0a;
+  cursor: pointer;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+  transition: opacity 0.3s;
+}
+
+.linkButton:hover {
+  opacity: 0.6;
+}
+
+.sideVisual {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.visualContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.statBox {
+  background: white;
+  border: 2px solid #e0e0e0;
+  padding: 3rem;
+  text-align: center;
+}
+
+.statNumber {
+  font-size: 4rem;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  color: #666;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.textBox {
+  background: white;
+  border: 2px solid #e0e0e0;
+  padding: 2rem;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.visualGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 150px);
+  grid-template-rows: repeat(2, 150px);
+  gap: 1.5rem;
+}
+
+.visualItem {
+  background: white;
+  border: 2px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0a0a0a;
+}
+
+.miniStat {
+  text-align: center;
+}
+
+.miniNumber {
+  font-size: 2.5rem;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+}
+
+.miniText {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+@media (max-width: 968px) {
+  .formSection {
+    flex-direction: column;
+    padding: 3rem 5%;
+  }
+
+  .sideVisual {
+    display: none;
+  }
+
+  .formContainer {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .formContainer {
+    padding: 2rem;
+  }
+
+  .formTitle {
+    font-size: 2rem;
+  }
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.errorMessage {
+  background: #fee;
+  border: 2px solid #fcc;
+  color: #c00;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
